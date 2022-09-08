@@ -9,3 +9,12 @@ GET /doc;/__$%7BT%20(org.springframework.cglib.core.ReflectUtils).defineClass(%2
 
 2、thymeleaf bypass的关键
 除了上文提到的部分，还有一个点是payload里不能包含new关键字，所有之前的payload会在新版里报错，原因https://github.com/thymeleaf/thymeleaf/issues/809，所以参考 https://landgrey.me/blog/15/ 中的payload。另外，由于作为URL路径的paylaod里不能包含/，所以采用双重URL编码，在payload里使用 org.unbescape.uri.UriEscape.unescapeUriPath 解一层码
+
+参考文章：
+https://landgrey.me/blog/15/
+https://landgrey.me/blog/19/
+https://github.com/thymeleaf/thymeleaf/issues/809
+https://www.cnpanda.net/sec/1063.html
+https://www.freebuf.com/articles/web/339962.html
+https://gv7.me/articles/2022/the-spring-cloud-gateway-inject-memshell-through-spel-expressions/
+https://xz.aliyun.com/t/11331
